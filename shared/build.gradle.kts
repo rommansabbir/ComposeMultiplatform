@@ -35,6 +35,8 @@ kotlin {
                 implementation(compose.components.resources)
                 implementation("media.kamel:kamel-image:0.7.0")
                 implementation("io.ktor:ktor-client-core:2.3.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.1")
             }
         }
         val androidMain by getting {
@@ -76,7 +78,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildToolsVersion = "30.0.2"
     kotlin {
         jvmToolchain(11)
     }
+
+    buildFeatures {
+        compose = true
+    }
+
 }
